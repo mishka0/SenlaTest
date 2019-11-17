@@ -1,4 +1,6 @@
-package Task5;
+package Senla.Task5;
+
+import Senla.Reader;
 
 /*
     Создать программу, которая в последовательности от 0 до N,
@@ -8,24 +10,19 @@ package Task5;
  */
 public class Main {
     public static void main(String[] args) {
-        int num;
+        Reader reader = new Reader();
+        int number = reader.readInt();
 
-        do{                                 // Ввод числа от 0 до 100
-            num = InputInt.inputInt();
-        } while(num <= 0 || num >= 100);
+        while(number < 0 || number > 100) {
+            number = reader.readInt();
+        }
 
-        for (int i = 0; i <= num; i++) {        // Поиск чисел палиндромов
+        for (int i = 0; i <= number; i++) {
             if (IsPalindrome.isPalindrome(i)) {
                 System.out.println(i);
             }
         }
 
     }
-
-
-
-
-
-
 }
 

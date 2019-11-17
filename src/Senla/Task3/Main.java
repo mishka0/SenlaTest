@@ -1,4 +1,4 @@
-package Task3;
+package Senla.Task3;
 /*
 
     Создать программу, которая будет:
@@ -12,19 +12,18 @@ package Task3;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-
+import Senla.Reader;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-
         String clearSentence;
-        String inputSentence;
+        Reader reader = new Reader();
+
+        System.out.println("Введите предложение: ");
+        String inputSentence = reader.readString();
         int wordsCount = 0;
 
         ArrayList<String> words = new ArrayList<>();
-
-        System.out.println("Введите предложение: ");
-        inputSentence = InputSentence.inputSentence();
 
         clearSentence = inputSentence.replaceAll("\\p{Punct}", "");
 
@@ -40,5 +39,4 @@ public class Main {
         System.out.println("Количество слов в предложении: " + wordsCount);
 
     }
-
 }

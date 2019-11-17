@@ -1,4 +1,4 @@
-package Task4;
+package Senla.Task4;
 
 public class SearchWordCount {
     public static void searchWordCount(String text, String word) {

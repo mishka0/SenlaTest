@@ -1,22 +1,27 @@
-package Task6;
+package Senla.Task6;
 /*
     Имеется набор вещей, которые необходимо поместить в рюкзак.
     Рюкзак обладает заданной грузоподъемностью.
     Вещи в свою очередь обладают двумя параметрами — весом и стоимостью.
     Цель задачи заполнить рюкзак не превысив его грузоподъемность и максимизировать суммарную ценность груза.
  */
-import java.util.*;
+import Senla.Reader;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        int numberOfThings;
-        ArrayList<Thing> things = new ArrayList<>();
+
+        List<Thing> things = new ArrayList<>();
+        Reader reader = new Reader();
 
         System.out.println("Введите количество вещей: ");
-        numberOfThings = InputInt.inputInt();
+        int numberOfThings = reader.readInt();
 
         System.out.println("Введите грузоподъемность рюкзака: ");
-        Backpack backpack = new Backpack(InputInt.inputInt());
+        Backpack backpack = new Backpack(reader.readInt());
 
         Random random = new Random();
 
@@ -25,7 +30,7 @@ public class Main {
             things.add(thing);
         }
 
-        things.sort(Thing.CompareByCost);
+        things.sort(ThingComparator.CompareByCost);
 
         System.out.println("########### Список вещей ###############");
         for (Thing thing : things) {
@@ -43,14 +48,7 @@ public class Main {
         System.out.println("########################################");
         System.out.println();
 
-
         backpack.showBackpack();
-
-
-
-
-
-        // backpack.add
     }
 }
 

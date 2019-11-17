@@ -1,4 +1,4 @@
-package Task4;
+package Senla.Task4;
 /*
     Создать программу, которая подсчитывает сколько раз употребляется
     слово в тексте (без учета регистра).
@@ -6,29 +6,25 @@ package Task4;
 
  */
 
+import Senla.Reader;
 import java.io.IOException;
-
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String inputText;
-        String clearText;
-        String searchWord;
 
+        Reader reader = new Reader();
+        String clearText;
 
         System.out.println("Введите текст: ");
-        inputText = InputText.inputText();
+        String inputText = reader.readString();
 
         System.out.println("Введите слово для поиска: ");
-        searchWord = InputText.inputText();
+        String searchWord = reader.readString();
 
         clearText = inputText.replaceAll("\\p{Punct}", "");
 
         SearchWordCount.searchWordCount(clearText, searchWord);
 
     }
-
-
-
 }
 

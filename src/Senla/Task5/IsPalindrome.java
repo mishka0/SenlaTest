@@ -1,7 +1,7 @@
-package Task5;
+package Senla.Task5;
 
 public class IsPalindrome {
-    static boolean isPalindrome(int normalNum) {        // Проверка числа на палиндром
+    static boolean isPalindrome(int normalNum) {
         int reverseNum = 0;
         int tempNum = normalNum;
 
@@ -10,6 +10,6 @@ public class IsPalindrome {
             tempNum /= 10;
         }
 
-        return normalNum == reverseNum; // Сравниваем нормальное число и "число-перевертыш"
+        return normalNum == reverseNum;
     }
 }

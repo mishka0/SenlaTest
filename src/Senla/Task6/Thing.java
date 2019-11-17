@@ -1,6 +1,4 @@
-package Task6;
-
-import java.util.Comparator;
+package Senla.Task6;
 
 public class Thing {
     private int weight;
@@ -31,11 +29,4 @@ public class Thing {
     public String toString() {
         return ("Вес: " + weight + " Стоимость: " + cost);
     }
-
-    public static final Comparator<Thing> CompareByCost = new Comparator<Thing>() {
-        @Override
-        public int compare(Thing first, Thing second) {
-            return Integer.compare(second.getCost(),first.getCost());
-        }
-    };
 }
